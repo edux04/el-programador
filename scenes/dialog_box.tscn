@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct4xdyiaik1e2"]
+
+[ext_resource type="Script" uid="uid://ylflgqfia7sf" path="res://scripts/office/dialog_box.gd" id="1_bipwt"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_df88m"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_kxkgd"]
+
+[sub_resource type="Theme" id="Theme_v0qdq"]
+default_font = ExtResource("2_df88m")
+
+[sub_resource type="Theme" id="Theme_caxlw"]
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_bipwt")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 1
+offset_left = 411.0
+offset_top = 528.0
+offset_right = 771.0
+offset_bottom = 644.0
+
+[node name="ContinueButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 87.0
+offset_right = 359.0
+offset_bottom = 118.0
+text = "Continuar"
+
+[node name="YesButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 82.0
+offset_right = 103.0
+offset_bottom = 113.0
+theme = SubResource("Theme_v0qdq")
+text = "Si
+"
+
+[node name="NoButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 82.0
+offset_right = 149.0
+offset_bottom = 113.0
+theme = SubResource("Theme_caxlw")
+theme_override_fonts/font = ExtResource("3_kxkgd")
+text = "No"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 362.0
+offset_bottom = 116.0
+autowrap_mode = 3

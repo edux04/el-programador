@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7lh403s7dio"]
+
+[ext_resource type="Texture2D" uid="uid://5cjkso4ucmsy" path="res://assets/tilesets/office/writing-table.png" id="1_dgh7k"]
+[ext_resource type="Script" uid="uid://djpgsdjqi5fcp" path="res://scripts/house/study_table.gd" id="2_61uj7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61uj7"]
+atlas = ExtResource("1_dgh7k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkkc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61uj7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61uj7"]
+radius = 28.4429
+
+[node name="StudyTable" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dkkc8")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+script = ExtResource("2_61uj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+shape = SubResource("CircleShape2D_61uj7")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

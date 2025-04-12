@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct4xdyiaik1e2"]
+
+[ext_resource type="Script" uid="uid://ylflgqfia7sf" path="res://scripts/dialog_box.gd" id="1_xvd2c"]
+
+[node name="DialogBox" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_xvd2c")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 300.0
+offset_top = -120.0
+offset_right = 660.0
+offset_bottom = -4.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 87.0
+offset_right = 359.0
+offset_bottom = 118.0
+text = "Continuar"
+
+[node name="Label" type="Label" parent="Panel"]
+offset_right = 40.0
+offset_bottom = 23.0
+autowrap_mode = 3

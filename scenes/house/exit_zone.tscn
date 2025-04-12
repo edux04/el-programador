@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ko274wuab5w"]
+
+[ext_resource type="Script" uid="uid://gdtbfee5yeex" path="res://scripts/house/ExitZone.gd" id="1_ayvvx"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_37c0l"]
+b = Vector2(0, 36)
+
+[node name="ExitZone" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_ayvvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_37c0l")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

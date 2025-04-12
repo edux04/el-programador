@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://juh33eqakq1v"]
+
+[ext_resource type="Script" uid="uid://b6sw2ymytdt6u" path="res://scripts/house/animated_pc.gd" id="1_abnys"]
+[ext_resource type="Texture2D" uid="uid://caa5uc4xhoxpe" path="res://assets/tilesets/office/animated_pc.png" id="1_v3bro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3bro"]
+atlas = ExtResource("1_v3bro")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abnys"]
+atlas = ExtResource("1_v3bro")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t86as"]
+atlas = ExtResource("1_v3bro")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqg84"]
+atlas = ExtResource("1_v3bro")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jdv2"]
+atlas = ExtResource("1_v3bro")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du24m"]
+atlas = ExtResource("1_v3bro")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxlsb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3bro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abnys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t86as")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqg84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jdv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du24m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abi4x"]
+height = 20.0
+
+[node name="AnimatedPC" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cxlsb")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+script = ExtResource("1_abnys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(-2, -5)
+shape = SubResource("CapsuleShape2D_abi4x")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

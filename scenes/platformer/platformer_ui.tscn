@@ -1,0 +1,156 @@
+[gd_scene load_steps=17 format=3 uid="uid://pt7qegiuk8ps"]
+
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_vwv1x"]
+[ext_resource type="Texture2D" uid="uid://tecdb3ukxxxm" path="res://assets/platformer/coin.png" id="2_cc6pj"]
+[ext_resource type="Texture2D" uid="uid://cf0aw17xwt8ym" path="res://assets/platformer/Sprite_heart.png" id="3_rjpif"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nduwc"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpb3r"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr7qi"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b513i"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekrrf"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dsr1"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7hnt"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxajr"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rmcb"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tle1a"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecctg"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw3wu"]
+atlas = ExtResource("2_cc6pj")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_675kl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nduwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpb3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr7qi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b513i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekrrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dsr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7hnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxajr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rmcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tle1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecctg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw3wu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="Node"]
+
+[node name="Points" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="Points"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 46.0
+offset_top = -11.0
+offset_right = 140.0
+offset_bottom = 49.0
+size_flags_vertical = 4
+
+[node name="PointsLabel" type="Label" parent="Points/Control"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 18.0
+offset_right = 70.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_vwv1x")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Points/Control"]
+position = Vector2(31.25, 28.25)
+scale = Vector2(2.34375, 2.34375)
+sprite_frames = SubResource("SpriteFrames_675kl")
+autoplay = "default"
+frame = 5
+frame_progress = 0.8967
+
+[node name="Hearts" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hearts"]
+texture_filter = 1
+offset_left = 178.0
+offset_top = 5.0
+offset_right = 252.0
+offset_bottom = 27.0
+alignment = 1
+
+[node name="Heart" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_rjpif")
+expand_mode = 2
+
+[node name="Heart 2" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_rjpif")
+expand_mode = 2
+
+[node name="Heart 3" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_rjpif")
+expand_mode = 2

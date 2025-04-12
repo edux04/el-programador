@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0832y6mj8kuu"]
+
+[ext_resource type="Script" uid="uid://dmnffv2srghvb" path="res://scripts/platformer/damage_zone.gd" id="1_evbh1"]
+
+[node name="DamageZone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_evbh1")
